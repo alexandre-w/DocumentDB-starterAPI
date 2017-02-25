@@ -1,0 +1,174 @@
+ERROR 15 Microsoft.Azure.Documents.Client.DocumentClient - GetOneDocumentAsync problem
+Microsoft.Azure.Documents.DocumentClientException: Message: {"Errors":["Resource Not Found"]}
+ActivityId: de03f42d-c984-4533-a78e-505c922ac3cb, Request URI: /apps/7ef8ebd7-3aa2-4da3-bbc0-23dd39025348/services/10cb507f-76c9-4dbd-850f-47ed64d1116d/partitions/ab9f9890-999c-40ce-9b8b-67a953a7736d/replicas/131314797038601886s
+   à Microsoft.Azure.Documents.Client.ClientExtensions.<ParseResponseAsync>d__4.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   à Microsoft.Azure.Documents.GatewayStoreModel.<>c__DisplayClass10.<<InvokeAsync>b__f>d__12.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<>c__DisplayClass2.<<ExecuteAsync>b__0>d__4.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteRetry>d__1b.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteRetry>d__1b.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteAsync>d__a.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.GatewayStoreModel.<InvokeAsync>d__1f.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.GatewayStoreModel.<ProcessMessageAsync>d__2.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.Client.DocumentClient.<ReadAsync>d__2f6.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.Client.DocumentClient.<ReadDocumentPrivateAsync>d__179.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<>c__DisplayClass2.<<ExecuteAsync>b__0>d__4.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteRetry>d__1b.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteRetry>d__1b.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteAsync>d__a.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à DocumentDB_starterAPI.DAL.Repository.DocumentDBRepository`1.<GetOneDocumentAsync>d__8.MoveNext() dans C:\Users\WETTA\Documents\Visual Studio 2015\Projects\DocumentDB-starterAPI\DocumentDB-starterAPI\DAL\Repository\DocumentDBRepository.cs:ligne 134
+ERROR 7 Microsoft.Azure.Documents.Client.DocumentClient - GetOneDocumentAsync problem
+Microsoft.Azure.Documents.DocumentClientException: Message: {"Errors":["Resource Not Found"]}
+ActivityId: c1f2ed97-dff0-46fc-bda5-2571193778b9, Request URI: /apps/7ef8ebd7-3aa2-4da3-bbc0-23dd39025348/services/10cb507f-76c9-4dbd-850f-47ed64d1116d/partitions/ab9f9890-999c-40ce-9b8b-67a953a7736d/replicas/131315018303714766p
+   à Microsoft.Azure.Documents.Client.ClientExtensions.<ParseResponseAsync>d__4.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   à Microsoft.Azure.Documents.GatewayStoreModel.<>c__DisplayClass10.<<InvokeAsync>b__f>d__12.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<>c__DisplayClass2.<<ExecuteAsync>b__0>d__4.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteRetry>d__1b.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteRetry>d__1b.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteAsync>d__a.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.GatewayStoreModel.<InvokeAsync>d__1f.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.GatewayStoreModel.<ProcessMessageAsync>d__2.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.Client.DocumentClient.<ReadAsync>d__2f6.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.Client.DocumentClient.<ReadDocumentPrivateAsync>d__179.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<>c__DisplayClass2.<<ExecuteAsync>b__0>d__4.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteRetry>d__1b.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteRetry>d__1b.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteAsync>d__a.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à DocumentDB_starterAPI.DAL.Repository.DocumentDBRepository`1.<GetOneDocumentAsync>d__8.MoveNext() dans C:\Users\WETTA\Documents\Visual Studio 2015\Projects\DocumentDB-starterAPI\DocumentDB-starterAPI\DAL\Repository\DocumentDBRepository.cs:ligne 134
+ERROR 6 Microsoft.Azure.Documents.Client.DocumentClient - GetOneDocumentAsync error
+Microsoft.Azure.Documents.DocumentClientException: Message: {"Errors":["Resource Not Found"]}
+ActivityId: 92c3aa5c-e62a-461c-92a4-fa0d67ff22f4, Request URI: /apps/7ef8ebd7-3aa2-4da3-bbc0-23dd39025348/services/10cb507f-76c9-4dbd-850f-47ed64d1116d/partitions/ab9f9890-999c-40ce-9b8b-67a953a7736d/replicas/131315018303714766p
+   à Microsoft.Azure.Documents.Client.ClientExtensions.<ParseResponseAsync>d__4.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   à Microsoft.Azure.Documents.GatewayStoreModel.<>c__DisplayClass10.<<InvokeAsync>b__f>d__12.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<>c__DisplayClass2.<<ExecuteAsync>b__0>d__4.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteRetry>d__1b.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteRetry>d__1b.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteAsync>d__a.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.GatewayStoreModel.<InvokeAsync>d__1f.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.GatewayStoreModel.<ProcessMessageAsync>d__2.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.Client.DocumentClient.<ReadAsync>d__2f6.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.Client.DocumentClient.<ReadDocumentPrivateAsync>d__179.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<>c__DisplayClass2.<<ExecuteAsync>b__0>d__4.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteRetry>d__1b.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteRetry>d__1b.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Microsoft.Azure.Documents.BackoffRetryUtility`1.<ExecuteAsync>d__a.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   à DocumentDB_starterAPI.DAL.Repository.DocumentDBRepository`1.<GetOneDocumentAsync>d__8.MoveNext() dans C:\Users\WETTA\Documents\Visual Studio 2015\Projects\DocumentDB-starterAPI\DocumentDB-starterAPI\DAL\Repository\DocumentDBRepository.cs:ligne 134

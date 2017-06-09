@@ -3,7 +3,7 @@
     /// <summary>
     /// List of errors
     /// </summary>
-    public class errorMsg
+    public class ErrorMsg
     {
         public const string BDD01 = "Database error";
         public const string BDD02 = "Collection error";
@@ -13,5 +13,6 @@
         public const string BDD06 = "DeleteDocument error";
         public const string BDD07 = "GetDocumentsAsync error";
         public const string BDD08 = "GetAllDocumentsAsync error";
+        public const string BDD09 = "GetAllSortedDocumentsAsync error";
     }
 }

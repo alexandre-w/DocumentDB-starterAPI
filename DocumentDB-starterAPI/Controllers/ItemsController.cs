@@ -6,12 +6,17 @@ using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Net;
 using DocumentDB_starterAPI.Filters;
+using System;
+using System.Web.Http.Routing;
+using System.Web;
 
 namespace DocumentDB_starterAPI.Controllers
 {
     public class ItemsController : ApiController
     {
         private BLItemRequest bl ;
+
+        const int maxPageSize = 10 ;
         public ItemsController()
         {
             bl = new BLItemRequest();
@@ -23,12 +28,13 @@ namespace DocumentDB_starterAPI.Controllers
         {
             try
             {
-                IEnumerable<JObject> itemList = await bl.GetAll();
+                List<JObject> itemList = await bl.GetAll();
+
                 return Ok(itemList);
             }
-            catch
+            catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
 
             

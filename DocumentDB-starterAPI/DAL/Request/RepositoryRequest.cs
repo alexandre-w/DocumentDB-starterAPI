@@ -5,6 +5,7 @@ using DocumentDB_starterAPI.DAL.Repository;
 using DocumentDB_starterAPI.Helpers;
 using Microsoft.Azure.Documents;
 using System.Net;
+using System;
 
 namespace DocumentDB_starterAPI.DAL.Request
 {
@@ -15,12 +16,20 @@ namespace DocumentDB_starterAPI.DAL.Request
             return await DocumentDBRepository<JObject>.DeleteDocument(id);
         }
 
-        public async Task<IEnumerable<JObject>> GetAll()
+        public async Task<List<JObject>> GetAll()
         {
-            IEnumerable<JObject> itemList = await DocumentDBRepository<JObject>.GetAllDocumentsAsync();
-            IEnumerable<JObject> cleanItems = JsonHelper.cleanJObjectList(itemList);
+            List<JObject> itemList = await DocumentDBRepository<JObject>.GetAllDocumentsAsync();
+            List<JObject> cleanItems = JsonHelper.cleanJObjectList(itemList);
 
             return cleanItems;
+        }
+
+        public async Task<Tuple<List<JObject>, int>> GetAllSort(string sort, int page , int pageSize )
+        {
+            Tuple<List<JObject>, int> tupleQuery = await DocumentDBRepository<JObject>.GetAllSortedDocumentsAsync(sort, page, pageSize);
+            List<JObject> cleanItems = JsonHelper.cleanJObjectList(tupleQuery.Item1);
+
+            return tupleQuery;
         }
 
         public async Task<JObject> GetOne(string id)

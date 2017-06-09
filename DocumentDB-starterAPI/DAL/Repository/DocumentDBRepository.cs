@@ -9,7 +9,9 @@ using System.Configuration;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Dynamic;
 
 namespace DocumentDB_starterAPI.DAL.Repository
 {
@@ -45,7 +47,7 @@ namespace DocumentDB_starterAPI.DAL.Repository
             }
             catch (DocumentClientException ex)
             {
-                App.Log(client.GetType()).Error(Helpers.errorMsg.BDD01, ex);
+                App.Log(client.GetType()).Error(Helpers.ErrorMsg.BDD01, ex);
                 throw;
             }
         }
@@ -62,7 +64,7 @@ namespace DocumentDB_starterAPI.DAL.Repository
             }
             catch (DocumentClientException ex)
             {
-                App.Log(client.GetType()).Error(Helpers.errorMsg.BDD02, ex);
+                App.Log(client.GetType()).Error(Helpers.ErrorMsg.BDD02, ex);
                 throw;
             }
         }
@@ -72,7 +74,7 @@ namespace DocumentDB_starterAPI.DAL.Repository
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        public static async Task<IEnumerable<T>> GetDocumentsAsync(Expression<Func<T, bool>> predicate)
+        public static async Task<List<T>> GetDocumentsAsync(Expression<Func<T, bool>> predicate)
         {
             try
             {
@@ -91,7 +93,7 @@ namespace DocumentDB_starterAPI.DAL.Repository
             }
             catch (DocumentClientException ex)
             {
-                App.Log(client.GetType()).Error(Helpers.errorMsg.BDD07, ex);
+                App.Log(client.GetType()).Error(Helpers.ErrorMsg.BDD07, ex);
                 throw;
             }
         }
@@ -100,7 +102,7 @@ namespace DocumentDB_starterAPI.DAL.Repository
         /// Get all Documents from your Collection
         /// </summary>
         /// <returns></returns>
-        public static async Task<IEnumerable<T>> GetAllDocumentsAsync()
+        public static async Task<List<T>> GetAllDocumentsAsync()
         {
             try
             {
@@ -117,9 +119,49 @@ namespace DocumentDB_starterAPI.DAL.Repository
                 return results;
             }catch(DocumentClientException ex)
             {
-                App.Log(client.GetType()).Error(Helpers.errorMsg.BDD08, ex);
+                App.Log(client.GetType()).Error(Helpers.ErrorMsg.BDD08, ex);
                 throw;
             }
+        }
+
+        /// <summary>
+        /// Get all Documents from your Collection with a sort
+        /// </summary>
+        /// <returns></returns>
+        public static async Task<Tuple<List<T>,int>> GetAllSortedDocumentsAsync(string sort, int page , int pageSize)
+        {
+
+            try
+            {
+                IDocumentQuery<T> query = client.CreateDocumentQuery<T>(
+                    UriFactory.CreateDocumentCollectionUri(databaseName, collectionName)).AsDocumentQuery();
+
+                List<T> results = new List<T>();
+
+                while (query.HasMoreResults)
+                {
+                    results.AddRange(await query.ExecuteNextAsync<T>());
+                }
+
+                //Apply the sort
+                StringBuilder str = new StringBuilder(@"it[""");
+                str.Append(sort);
+                str.Append(@"""]");
+
+                int countList = results.Count;
+
+                var sortedList = results.AsQueryable().OrderBy(str.ToString()).Skip(pageSize * (page - 1)).Take(pageSize).ToList();
+
+                Tuple<List<T>, int> tuple = new Tuple<List<T>, int>(sortedList, countList);
+
+                return tuple;
+            }
+            catch (DocumentClientException ex)
+            {
+                App.Log(client.GetType()).Error(Helpers.ErrorMsg.BDD09, ex);
+                throw;
+            }
+
         }
 
         /// <summary>
@@ -137,7 +179,7 @@ namespace DocumentDB_starterAPI.DAL.Repository
             }
             catch (DocumentClientException ex)
             {
-                App.Log(client.GetType()).Error(Helpers.errorMsg.BDD03, ex);
+                App.Log(client.GetType()).Error(Helpers.ErrorMsg.BDD03, ex);
                 throw;
             }
         }
@@ -156,7 +198,7 @@ namespace DocumentDB_starterAPI.DAL.Repository
             }
             catch (DocumentClientException ex)
             {
-                App.Log(client.GetType()).Error(Helpers.errorMsg.BDD04, ex);
+                App.Log(client.GetType()).Error(Helpers.ErrorMsg.BDD04, ex);
                 throw;
             }
         }
@@ -175,7 +217,7 @@ namespace DocumentDB_starterAPI.DAL.Repository
             }
             catch (DocumentClientException ex)
             {
-                App.Log(client.GetType()).Error(Helpers.errorMsg.BDD05, ex);
+                App.Log(client.GetType()).Error(Helpers.ErrorMsg.BDD05, ex);
                 throw;
             }
         }
@@ -194,7 +236,7 @@ namespace DocumentDB_starterAPI.DAL.Repository
 
             }catch(DocumentClientException ex)
             {
-                App.Log(client.GetType()).Error(Helpers.errorMsg.BDD06, ex);
+                App.Log(client.GetType()).Error(Helpers.ErrorMsg.BDD06, ex);
                 throw;
             }
             

@@ -3,6 +3,7 @@ using DocumentDB_starterAPI.DAL.Request;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using System.Net;
+using System;
 
 namespace DocumentDB_starterAPI.BusinessLayer
 {
@@ -20,9 +21,14 @@ namespace DocumentDB_starterAPI.BusinessLayer
             return await request.Delete(id);
         }
 
-        public async Task<IEnumerable<JObject>> GetAll()
+        public async Task<List<JObject>> GetAll()
         {
             return await request.GetAll();
+        }
+
+        public async Task<Tuple<List<JObject>,int>> GetAllSort(string sort, int page = 1, int pageSize = 5)
+        {
+            return await request.GetAllSort(sort, page, pageSize);
         }
 
         public async Task<JObject> GetOne(string id)

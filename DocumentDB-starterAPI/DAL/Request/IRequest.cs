@@ -14,7 +14,13 @@ namespace DocumentDB_starterAPI.DAL.Request
         /// Get all Documents from your Collection
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<JObject>> GetAll();
+        Task<List<JObject>> GetAll();
+
+        /// <summary>
+        /// Get all Documents from your Collection with a sort 
+        /// </summary>
+        /// <returns>Sorted Documents</returns>
+        Task< Tuple<List<JObject>,int>> GetAllSort(string sort, int page , int pageSize );
 
         /// <summary>
         /// Get a document from your Collection with an ID

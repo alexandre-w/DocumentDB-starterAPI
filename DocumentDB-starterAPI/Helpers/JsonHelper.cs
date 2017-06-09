@@ -30,7 +30,7 @@ namespace DocumentDB_starterAPI.Helpers
         /// </summary>
         /// <param name="JEnum">List of JObject to clean</param>
         /// <returns></returns>
-        public static IEnumerable<JObject> cleanJObjectList(IEnumerable<JObject> JEnum)
+        public static List<JObject> cleanJObjectList(List<JObject> JEnum)
         {
             if (JEnum != null)
             {
